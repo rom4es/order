@@ -1,4 +1,4 @@
-# vuejs_cli_basket
+# vue order
 
 ## Project setup
 ```
