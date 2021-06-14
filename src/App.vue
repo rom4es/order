@@ -11,13 +11,13 @@
 						<th class="th-sum">Сумма</th>
 						<th></th>
 					</tr>
-					<tr is="BasketItem"
+					<BasketItem 
 						v-for="item in basketItems" 
 						:key="item.id"
 						:item="item"
 						@change-quantity="changeQuantity"
 						@delete-item="deleteItem"
-					></tr>
+					></BasketItem>
 				</table>
 
 				<h3>Данные к заказу</h3>
