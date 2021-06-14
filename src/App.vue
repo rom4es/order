@@ -8,7 +8,7 @@
 						<th>Название</th>
 						<th>Количество</th>
 						<th>Цена</th>
-						<th>Сумма</th>
+						<th class="th-sum">Сумма</th>
 						<th></th>
 					</tr>
 					<tr is="BasketItem"
@@ -200,20 +200,24 @@ export default {
 	b{
 		font-family: 'Geometria-Bold';
 	}
-	.btn{
-		color: #FFF;
-		background-color: #B49393;
-		padding: 6px 14px;
-		border-radius: 100px;
-		border: none;
-		cursor: pointer;
+	.b-btn{
+		width: 200px;
+		text-align: center;
 	}
-	.order-btn{
-		min-width: 200px;
-		padding: 12px 24px;
-		font-family: 'Geometria-Bold';
-		font-size: 16px;
-	}
+		.btn{
+			width: 100%;
+			color: #FFF;
+			background-color: #B49393;
+			padding: 6px 14px;
+			border-radius: 100px;
+			border: none;
+			cursor: pointer;
+		}
+		.order-btn{
+			padding: 12px 24px;
+			font-family: 'Geometria-Bold';
+			font-size: 16px;
+		}
 	table{
 		width: 100%;
 		border-spacing: 0px;
@@ -225,6 +229,9 @@ export default {
 		}
 			th{
 				font-family: 'Geometria-Bold';
+			}
+			th.th-sum{
+				min-width: 100px;
 			}
 			th, td{
 				padding: 15px 8px;
@@ -261,6 +268,7 @@ export default {
 	.preloader{
 		width: 40px;
 		height: 40px;
+		margin: 0 auto;
 	}
 	.b-input{
 		width: 250px;

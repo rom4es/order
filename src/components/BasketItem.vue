@@ -1,14 +1,14 @@
 <template>
 	<tr>
-    <td>{{ item.name }}</td>
-    <td>
-      <button @click="reduceQuantity" class="quantity-btn">-</button>
-        <input type="text" name="q" :value="quantity" @input="changeQuantity($event)">
-      <button @click="addQuantity" class="quantity-btn">+</button></td>
-    <td>{{ item.sum }} руб.</td>
-    <td>{{ total }} руб.</td>
-    <td><button @click="$emit('delete-item', item.id)" class="btn">Удалить</button></td>
-  </tr>
+		<td>{{ item.name }}</td>
+		<td>
+			<button @click="reduceQuantity" class="quantity-btn">-</button>
+			<input type="text" name="q" :value="quantity" @input="changeQuantity($event)" maxlength="2">
+			<button @click="addQuantity" class="quantity-btn">+</button></td>
+		<td>{{ item.sum }} руб.</td>
+		<td>{{ total }} руб.</td>
+		<td><button @click="$emit('delete-item', item.id)" class="btn">Удалить</button></td>
+	</tr>
 </template>
 
 <script>
@@ -39,8 +39,8 @@ export default {
 			this.validateQuantity();
 		},
 		validateQuantity: function () {
-			var _quantity = String(this.quantity);
-			_quantity = _quantity.replace(/[^-\d]/g,'');
+			let _quantity = String(this.quantity);
+			_quantity = _quantity.replace(/[^\d]/g,'');
 			_quantity = Number(_quantity);
 			this.quantity = _quantity;
 			if(_quantity < 1){

@@ -64,8 +64,10 @@
 		<h4 class="delivery-price">Стоимость доставки: {{ deliveryPriceText() }}</h4>
 		<h4 class="totals">Общая сумма: {{ total }} руб.</h4>
 
-		<button v-if="!state.sending" class="btn order-btn">Оформить заказ</button>
-		<img class="preloader" src="@/assets/i/preloader.svg" v-else>
+		<div class="b-btn">
+			<button v-if="!state.sending" class="btn order-btn">Оформить заказ</button>
+			<img class="preloader" src="@/assets/i/preloader.svg" v-else>
+		</div>
 
 	</form>
 </template>
@@ -138,7 +140,7 @@ export default {
 				_this.$emit('sending-form');
 				setTimeout(function () {
 					_this.$emit('submitted-form');
-				}, 1000);
+				}, 2000);
 			}
 			
 		},
